@@ -60,12 +60,32 @@ class LinkList {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let print = linkList => {
-    let node = linkList.head;
-    while (node !== null) {
-        console.log(node.value);
-        node = node.next;
-    }
- }
+  let node = linkList.head;
+  while (node !== null) {
+    console.log(node.value);
+    node = node.next;
+  }
+};
+//O(n);
+
+let size = linkList => {
+  let counter = 0;
+  let node = linkList.head;
+  while (node !== null) {
+    counter++;
+    node = node.next;
+  }
+  return counter;
+};
+//O(n);
+
+let isEmpty = linkList => {
+  if (linkList.head === null) {
+    return true;
+  }
+  else return false;
+};
+//O(1);
 
 const linkList = new LinkList();
 
@@ -79,7 +99,9 @@ linkList.insert(6, 'Adam');
 
 //console.log(linkList);
 //console.log(display(linkList));
-print(linkList);
+// print(linkList);
+// console.log(size(linkList));
+// console.log(isEmpty(linkList));
 
 // console.log('retrieve', linkList.retrieve(1));
 // console.log('remove', linkList.remove(0));

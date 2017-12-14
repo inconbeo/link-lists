@@ -80,14 +80,37 @@ let size = linkList => {
 //O(n);
 
 let isEmpty = linkList => {
-  if (linkList.head === null) {
-    return true;
-  }
-  else return false;
+//   if (linkList.head === null) {
+//     return true;
+//   }
+//   else return false;
+
+return linkList.head === null;
 };
 //O(1);
 
 const linkList = new LinkList();
+
+let findPrevious = (linkList, value) => {
+    let node = linkList.head;
+    while (node.next.value !== value) {
+        //We will come back later for edge case
+        node = node.next;
+    }
+    // if (node.value) {
+    //     return node.value;
+    // }
+    // console.log('NOT FOUND');
+}
+//O(n)
+let findLast = linkList => {
+    let node = linkList.head;
+    while (node.next !== null) {
+        node = node.next;
+    }
+    return node;
+}
+//O(n)
 
 linkList.insert(0, 'Eddie');
 linkList.insert(1, 'Quang');
@@ -102,6 +125,8 @@ linkList.insert(6, 'Adam');
 // print(linkList);
 // console.log(size(linkList));
 // console.log(isEmpty(linkList));
+// console.log(findPrevious(linkList, 'abc'));
+console.log(findLast(linkList));
 
 // console.log('retrieve', linkList.retrieve(1));
 // console.log('remove', linkList.remove(0));

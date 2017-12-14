@@ -57,13 +57,33 @@ class LinkList {
     this.length--;
   }
 } 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let print = linkList => {
+    let node = linkList.head;
+    while (node !== null) {
+        console.log(node.value);
+        node = node.next;
+    }
+ }
 
 const linkList = new LinkList();
 
 linkList.insert(0, 'Eddie');
 linkList.insert(1, 'Quang');
-console.log(linkList);
+linkList.insert(2, 'Jesse');
+linkList.insert(3, 'Sunny');
+linkList.insert(4, 'Andy');
+linkList.insert(5, 'Nathan');
+linkList.insert(6, 'Adam');
 
-console.log('retrieve', linkList.retrieve(1));
-console.log('remove', linkList.remove(0));
-console.log('retireve', linkList.retrieve(0));
+//console.log(linkList);
+//console.log(display(linkList));
+print(linkList);
+
+// console.log('retrieve', linkList.retrieve(1));
+// console.log('remove', linkList.remove(0));
+// console.log('retireve', linkList.retrieve(0));
+
+
+

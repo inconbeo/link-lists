@@ -58,6 +58,16 @@ class LinkList {
   }
 } 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+const linkList = new LinkList();
+
+linkList.insert(0, 'Eddie');
+linkList.insert(1, 'Quang');
+linkList.insert(2, 'Jesse');
+linkList.insert(3, 'Sunny');
+linkList.insert(4, 'Andy');
+linkList.insert(5, 'Nathan');
+linkList.insert(6, 'Adam');
+// linkList.insert(7, 'Tauhida');
 
 let print = linkList => {
   let node = linkList.head;
@@ -85,40 +95,30 @@ let isEmpty = linkList => {
 //   }
 //   else return false;
 
-return linkList.head === null;
+  return linkList.head === null;
 };
 //O(1);
 
-const linkList = new LinkList();
-
 let findPrevious = (linkList, value) => {
-    let node = linkList.head;
-    while (node.next.value !== value) {
-        //We will come back later for edge case
-        node = node.next;
-    }
-    // if (node.value) {
-    //     return node.value;
-    // }
-    // console.log('NOT FOUND');
-}
+  let node = linkList.head;
+  while (node.next.value !== value) {
+    //We will come back later for edge case
+    node = node.next;
+  }
+  // if (node.value) {
+  //     return node.value;
+  // }
+  // console.log('NOT FOUND');
+};
 //O(n)
 let findLast = linkList => {
-    let node = linkList.head;
-    while (node.next !== null) {
-        node = node.next;
-    }
-    return node;
-}
+  let node = linkList.head;
+  while (node.next !== null) {
+    node = node.next;
+  }
+  return node;
+};
 //O(n)
-
-linkList.insert(0, 'Eddie');
-linkList.insert(1, 'Quang');
-linkList.insert(2, 'Jesse');
-linkList.insert(3, 'Sunny');
-linkList.insert(4, 'Andy');
-linkList.insert(5, 'Nathan');
-linkList.insert(6, 'Adam');
 
 //console.log(linkList);
 //console.log(display(linkList));
@@ -126,11 +126,26 @@ linkList.insert(6, 'Adam');
 // console.log(size(linkList));
 // console.log(isEmpty(linkList));
 // console.log(findPrevious(linkList, 'abc'));
-console.log(findLast(linkList));
+// console.log(findLast(linkList));
 
 // console.log('retrieve', linkList.retrieve(1));
 // console.log('remove', linkList.remove(0));
 // console.log('retireve', linkList.retrieve(0));
 
+//EXERCISE 3
+// Write an algorithm to find the middle element of a linked list without using the .length property. 
+// The lenght property is not a common property of linked list. 
+// Although the curriculum implementation of Linked list has the length property so you can see how long your list is, 
+// for this exercise, don't use the length property.
 
+function findMiddle(list){
+  let node = list.head;
+  let node2 = list.head;
+  while (node.next !== null && node2.next.next !== null) {
+    node = node.next;
+    node2 = node.next.next;
+  }
+  return node.value;
+}
 
+console.log(findMiddle(linkList));

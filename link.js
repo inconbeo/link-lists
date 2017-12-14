@@ -174,10 +174,43 @@ function reverseList(list){
 }
 
 reverseList(linkList);
+console.log(linkList);
 
 
 // let repeat = '.next';
 // node.repeat.repeat(i);
 
 //O(n)
+
+///////////////////////////////////////////////////
+
+let hasCycl = list => {
+    
+    let node1 = list.head;
+    let node2 = list.head
+    while (node1 !== null && node2 !== null && node2.next !== null) {
+      node1 = node1.next;
+      node2 = node2.next.next;
+      if (node1 === node2) {
+        return true;
+      }
+    }
+      return false;
+}
+
+
+// Create a sane list
+var cycleList = new LinkList();
+cycleList.insert(0, 1);
+cycleList.insert(1, 4);
+cycleList.insert(2, 6);
+cycleList.insert(3, 3);
+cycleList.insert(4, 3);
+cycleList.insert(5, 3);
+
+//Create a cycle in the list
+cycleList.head.next.next = cycleList.head;
+console.log(hasCycl(cycleList));
+console.log(cycleList);
+print(cycleList);
 

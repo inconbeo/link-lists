@@ -147,5 +147,17 @@ function findMiddle(list){
   }
   return node.value;
 }
-
 console.log(findMiddle(linkList));
+
+let findThird = linkList => {
+    let node = linkList.head;
+    while (node.next.next.next !== null) {
+        node = node.next;
+    }
+    return node.value;
+}
+
+console.log(findThird(linkList));
+
+
+

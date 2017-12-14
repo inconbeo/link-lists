@@ -150,14 +150,34 @@ function findMiddle(list){
 console.log(findMiddle(linkList));
 
 let findThird = linkList => {
-    let node = linkList.head;
-    while (node.next.next.next !== null) {
-        node = node.next;
-    }
-    return node.value;
-}
-
+  let node = linkList.head;
+  while (node.next.next.next !== null) {
+    node = node.next;
+  }
+  return node.value;
+};
 console.log(findThird(linkList));
 
+function reverseList(list){
+  //size of list = 1, 2, 3, 4, 5 (size = 5);
+  //1 > 2 > 3 > 4 > 5
+  let node = list.head;
+  let reversed = null;
+  while(node !== null) {
+    let nextNode = node.next;
+    node.next = reversed;
+    reversed = node;
+    node = nextNode;
+  }
+  list.head = reversed;
+  return print(list);
+}
 
+reverseList(linkList);
+
+
+// let repeat = '.next';
+// node.repeat.repeat(i);
+
+//O(n)
 
